@@ -11,20 +11,21 @@ public class Ticket {
     @Id
     @Column(name = "id")
     private int id;
-    @Column(name = "bus_id")
-    private int busId;
+    @Column(name = "trip_id")
+    private int tripId;
     @Column(name = "cost")
     private int cost;
     @Column(name = "status" )
     private String status;
-    @Column(name = "iin")
+    @Column(name = "passenger_iin")
     private int iin;
     @Column(name = "qrcode")
     private String qrcode;
 
-    public Ticket(int id, int busId, int cost, String status, int iin, String qrcode) {
+
+    public Ticket(int id, int tripId, int cost, String status, int iin, String qrcode) {
         this.id = id;
-        this.busId = busId;
+        this.tripId = tripId;
         this.cost = cost;
         this.status = status;
         this.iin = iin;
@@ -39,12 +40,12 @@ public class Ticket {
         this.id = id;
     }
 
-    public int getBusId() {
-        return busId;
+    public int getTripId() {
+        return tripId;
     }
 
-    public void setBusId(int busId) {
-        this.busId = busId;
+    public void setTripId(int tripId) {
+        this.tripId = tripId;
     }
 
     public int getCost() {

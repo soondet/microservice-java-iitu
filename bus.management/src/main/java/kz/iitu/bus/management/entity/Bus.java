@@ -22,6 +22,9 @@ public class Bus {
     @Column(name = "capacity")
     private double capacity;
 
+    public Bus() {
+    }
+
     public Bus(int id, String state_number, String model, int year, double capacity) {
         this.id = id;
         this.state_number = state_number;

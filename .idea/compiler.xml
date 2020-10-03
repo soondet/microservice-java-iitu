@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="trip.management" />
+        <module name="passenger.management" />
+        <module name="bus.management" />
+        <module name="driver.management" />
+        <module name="ticket.management" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="bus.management" target="11" />
+      <module name="driver.management" target="11" />
+      <module name="passenger.management" target="11" />
+      <module name="ticket.management" target="11" />
+      <module name="trip.management" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="bus.management" options="-parameters" />
+      <module name="driver.management" options="-parameters" />
+      <module name="passenger.management" options="-parameters" />
+      <module name="ticket.management" options="-parameters" />
+      <module name="trip.management" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/trip")
@@ -24,4 +25,15 @@ public class TripController {
 
     @PostMapping("/create")
     public Trip create(@RequestBody Trip trip){return  tripRepository.save(trip);}
+
+    //Single
+    @GetMapping("/all/{id}")
+    public Optional<Trip> one(@PathVariable int id) {
+        return tripRepository.findById(id);
+
+    }
+    @DeleteMapping("/all/{id}")
+    void deleteTrip(@PathVariable int id) {
+        tripRepository.deleteById(id);
+    }
 }

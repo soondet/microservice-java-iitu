@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/bus.management/bus.management.iml" filepath="$PROJECT_DIR$/bus.management/bus.management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/driver.management/driver.management.iml" filepath="$PROJECT_DIR$/driver.management/driver.management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/microservice-java-iitu.iml" filepath="$PROJECT_DIR$/.idea/microservice-java-iitu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/passenger.management/passenger.management.iml" filepath="$PROJECT_DIR$/passenger.management/passenger.management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ticket.management/ticket.management.iml" filepath="$PROJECT_DIR$/ticket.management/ticket.management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/trip.management/trip.management.iml" filepath="$PROJECT_DIR$/trip.management/trip.management.iml" />
+    </modules>
+  </component>
+</project>

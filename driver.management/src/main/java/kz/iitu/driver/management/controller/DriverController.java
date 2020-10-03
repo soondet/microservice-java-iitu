@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -26,5 +27,22 @@ public class DriverController {
 
     @PostMapping("/create")
     public Driver create(@RequestBody Driver driver){return  driverRepository.save(driver);}
+
+    //Single
+    @GetMapping("/all/{id}")
+    public Optional<Driver> one(@PathVariable int id) {
+        return driverRepository.findById(id);
+
+    }
+
+    @DeleteMapping("/all/{id}")
+    void deleteDriver(@PathVariable int id) {
+        driverRepository.deleteById(id);
+    }
+
+    @GetMapping("/bus/{busId}")
+    public List<Driver> getByBus(@PathVariable int busId){
+        return driverRepository.findBybusId(busId);
+    }
 
 }

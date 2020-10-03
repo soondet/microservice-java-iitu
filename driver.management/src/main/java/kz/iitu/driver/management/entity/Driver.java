@@ -13,6 +13,8 @@ public class Driver {
     @Id
     @Column(name = "id")
     private int id;
+    @Column(name = "bus_id")
+    private int busId;
     @Column(name = "name")
     private String name;
     @Column(name = "surname")
@@ -24,8 +26,12 @@ public class Driver {
     @Column(name = "driving_license_level")
     private String drivingLicenseLevel;
 
-    public Driver(int id, String name, String surname, int IIN, double experience, String drivingLicenseLevel) {
+    public Driver() {
+    }
+
+    public Driver(int id, int busId, String name, String surname, int IIN, double experience, String drivingLicenseLevel) {
         this.id = id;
+        this.busId = busId;
         this.name = name;
         this.surname = surname;
         this.IIN = IIN;
@@ -39,6 +45,14 @@ public class Driver {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getBusId() {
+        return busId;
+    }
+
+    public void setBusId(int busId) {
+        this.busId = busId;
     }
 
     public String getName() {
