@@ -44,15 +44,15 @@ public class BusController {
         busRepository.deleteById(id);
     }
 
-//    @GetMapping("/asd")
-//    public List<Driver> getDrivers(){
-//        RestTemplate restTemplate = new RestTemplate();
-//
-//        ResponseEntity<List<Driver>> driverResponse = restTemplate.exchange
-//                ("http://localhost:8002/driver/bus/1", HttpMethod.GET, null, new ParameterizedTypeReference<List<Driver>>() {
-//                });
-//        List<Driver> drivers = driverResponse.getBody();
-//        return drivers;
-//    }
+    @GetMapping("/asd")
+    public List<Driver> getDrivers(){
+        RestTemplate restTemplate = new RestTemplate();
+
+        ResponseEntity<List<Driver>> driverResponse = restTemplate.exchange
+                ("http://localhost:8002/driver/bus/1", HttpMethod.GET, null, new ParameterizedTypeReference<List<Driver>>() {
+                });
+        List<Driver> drivers = driverResponse.getBody();
+        return drivers;
+    }
 
 }
