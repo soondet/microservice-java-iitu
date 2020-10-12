@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/passenger")
 public class PassengerController {
@@ -25,4 +25,10 @@ public class PassengerController {
 
     @PostMapping("/create")
     public Passenger create(@RequestBody Passenger passenger){return  passengerRepository.save(passenger);}
+    //--------------
+    @GetMapping("/getByIin/{iin}")
+    public Passenger findByIin(@PathVariable int iin){
+        Passenger passenger =passengerRepository.findByIIN(iin);
+        return passenger;
+    }
 }

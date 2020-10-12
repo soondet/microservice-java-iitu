@@ -10,9 +10,9 @@ import javax.persistence.Table;
 public class Ticket {
     @Id
     @Column(name = "id")
-    private int id;
+    private Long id;
     @Column(name = "trip_id")
-    private int tripId;
+    private Long tripId;
     @Column(name = "cost")
     private int cost;
     @Column(name = "status" )
@@ -22,8 +22,10 @@ public class Ticket {
     @Column(name = "qrcode")
     private String qrcode;
 
+    public Ticket() {
+    }
 
-    public Ticket(int id, int tripId, int cost, String status, int iin, String qrcode) {
+    public Ticket(Long id, Long tripId, int cost, String status, int iin, String qrcode) {
         this.id = id;
         this.tripId = tripId;
         this.cost = cost;
@@ -32,19 +34,19 @@ public class Ticket {
         this.qrcode = qrcode;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public int getTripId() {
+    public Long getTripId() {
         return tripId;
     }
 
-    public void setTripId(int tripId) {
+    public void setTripId(Long tripId) {
         this.tripId = tripId;
     }
 

@@ -1,19 +1,23 @@
 package kz.iitu.driver.management.controller;
 
+import kz.iitu.driver.management.entity.Bus;
 import kz.iitu.driver.management.entity.Driver;
 import kz.iitu.driver.management.repository.DriverRepository;
+import kz.iitu.driver.management.service.BusService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/driver")
 public class DriverController {
 
     private final DriverRepository driverRepository;
+    @Autowired
+    private BusService busService;
 
     @Autowired
     public DriverController(DriverRepository driverRepository) {
@@ -43,6 +47,13 @@ public class DriverController {
     @GetMapping("/bus/{busId}")
     public List<Driver> getByBus(@PathVariable int busId){
         return driverRepository.findBybusId(busId);
+    }
+
+    @GetMapping("driversBus/{busId}")
+    public List<Driver> findLocationsTrip(@PathVariable Long busId){
+        System.out.println("im here");
+        Bus bus = busService.getDriversBus(busId);
+        return driverRepository.findBybusId(bus.getId());
     }
 
 }

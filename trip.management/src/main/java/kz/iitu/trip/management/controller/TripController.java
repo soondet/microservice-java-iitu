@@ -8,10 +8,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin("*")
 @RestController
-@RequestMapping("/trip")
+@RequestMapping("/trip" )
 public class TripController {
-    private final TripRepository tripRepository;
+    private  final TripRepository tripRepository;
 
     @Autowired
     public TripController(TripRepository tripRepository) {
@@ -28,12 +29,12 @@ public class TripController {
 
     //Single
     @GetMapping("/all/{id}")
-    public Optional<Trip> one(@PathVariable int id) {
+    public Optional<Trip> one(@PathVariable Long id) {
         return tripRepository.findById(id);
 
     }
     @DeleteMapping("/all/{id}")
-    void deleteTrip(@PathVariable int id) {
+    void deleteTrip(@PathVariable Long id) {
         tripRepository.deleteById(id);
     }
 }

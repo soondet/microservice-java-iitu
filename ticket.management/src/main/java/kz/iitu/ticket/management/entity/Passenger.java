@@ -1,4 +1,4 @@
-package kz.iitu.passenger.management.entity;
+package kz.iitu.ticket.management.entity;
 
 
 import javax.persistence.Column;

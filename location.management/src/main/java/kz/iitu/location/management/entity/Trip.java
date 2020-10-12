@@ -1,4 +1,4 @@
-package kz.iitu.trip.management.entity;
+package kz.iitu.location.management.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,16 +14,13 @@ public class Trip {
     private Long id;
     @Column(name = "location")
     private String loc;
-    @Column(name = "numb")
-    private int numb;
 
     public Trip() {
     }
 
-    public Trip(Long id, String loc,int numb) {
+    public Trip(Long id, String loc) {
         this.id = id;
         this.loc = loc;
-        this.numb = numb;
     }
 
     public Long getId() {
@@ -41,13 +38,4 @@ public class Trip {
     public void setLoc(String loc) {
         this.loc = loc;
     }
-
-    public int getNumb() {
-        return numb;
-    }
-
-    public void setNumb(int numb) {
-        this.numb = numb;
-    }
-
 }

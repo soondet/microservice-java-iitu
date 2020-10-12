@@ -1,22 +1,30 @@
 package kz.iitu.location.management.controller;
 
 import kz.iitu.location.management.entity.Location;
+import kz.iitu.location.management.entity.Trip;
 import kz.iitu.location.management.repository.LocationRepository;
+import kz.iitu.location.management.service.TripService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/location")
 public class LocationController {
     private final LocationRepository locationRepository;
+    @Autowired
+    private TripService tripService ;
 
     @Autowired
     public LocationController(LocationRepository locationRepository) {
         this.locationRepository = locationRepository;
     }
+
+
 
     //Aggregate
 
@@ -31,13 +39,20 @@ public class LocationController {
     //Single
 
     @GetMapping("/all/{id}")
-    public Optional<Location> one(@PathVariable int id) {
+    public Optional<Location> one(@PathVariable Long id) {
         return locationRepository.findById(id);
 
     }
     @DeleteMapping("/all/{id}")
-    void deleteEmployee(@PathVariable int id) {
+    void deleteEmployee(@PathVariable Long id) {
         locationRepository.deleteById(id);
+    }
+    @CrossOrigin("http://localhost:8006")
+    @GetMapping("/locationsTrip/{tripId}")
+    public List<Location> findLocationsTrip(@PathVariable Long tripId){
+        System.out.println("im here");
+        Trip trip = tripService.getLocationsTrip(tripId);
+        return locationRepository.findByTripId(trip.getId());
     }
 
 }
