@@ -1,0 +1,7 @@
+Report:
+We create driver and then bus.
+And assign this drivers to buses.
+So every bus has its own trip and many buses can ride by one trip.
+Every trip has its own locations.Example can be start:Atirau and end:Almaty.
+So for one trip there can be many tickets and this tickets can be sold to passengers by their IIN.
+Tickets are limitied and it has own price. 
