@@ -10,6 +10,8 @@ import kz.iitu.ticket.management.service.PassengerService;
 import kz.iitu.ticket.management.service.TripService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.List;
 
@@ -23,11 +25,16 @@ public class TicketController {
     private TripRepository tripRepository;
     @Autowired
     private TripService tripService;
-
     @Autowired
     private PassengerRepository passengerRepository;
     @Autowired
     private PassengerService passengerService;
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @Autowired
+    WebClient.Builder webClientBuilder;
 
     public TicketController(TicketRepository ticketRepository) {
         this.ticketRepository = ticketRepository;

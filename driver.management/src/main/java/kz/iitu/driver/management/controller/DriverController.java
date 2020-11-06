@@ -6,6 +6,7 @@ import kz.iitu.driver.management.repository.DriverRepository;
 import kz.iitu.driver.management.service.BusService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,6 +19,9 @@ public class DriverController {
     private final DriverRepository driverRepository;
     @Autowired
     private BusService busService;
+
+    @Autowired
+    WebClient.Builder webClientBuilder;
 
     @Autowired
     public DriverController(DriverRepository driverRepository) {
