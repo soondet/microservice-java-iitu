@@ -32,6 +32,7 @@ public class TripServiceImpl implements TripService {
                     @HystrixProperty(name="allowMaximumSizeToDivergeFromCoreSize", value="true"),
             })
     public Trip getLocationsTrip( Long tripId) {
+        RestTemplate restTemplate = new RestTemplate();
         String apiCredentials = "rest-trip:p@ssword";
         String base64Credentials = new String(Base64.encodeBase64(apiCredentials.getBytes()));
 
@@ -40,7 +41,7 @@ public class TripServiceImpl implements TripService {
         HttpEntity<String> entity = new HttpEntity<>(headers);
 
 
-        return restTemplate.getForObject("http://localhost:8005/trip/all/" + tripId, HttpMethod.GET,entity,Trip.class).getBody();
+        return restTemplate.exchange("http://localhost:8005/trip/all/" + tripId, HttpMethod.GET,entity,Trip.class).getBody();
     }
 
     public Trip getFallbackLocationsTrip(Long tripId){

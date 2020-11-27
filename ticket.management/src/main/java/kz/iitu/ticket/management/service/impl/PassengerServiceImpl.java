@@ -34,7 +34,7 @@ public class PassengerServiceImpl implements PassengerService {
         HttpEntity<String> entity = new HttpEntity<>(headers);
 
 
-        return restTemplate.getForObject("http://localhost:8003/passenger/getByIin/" + iin, HttpMethod.GET, entity,Passenger.class).getBody();
+        return restTemplate.exchange("http://localhost:8003/passenger/getByIin/" + iin, HttpMethod.GET, entity,Passenger.class).getBody();
     }
 
     public Passenger getFallbackPassengerIin(int iin){

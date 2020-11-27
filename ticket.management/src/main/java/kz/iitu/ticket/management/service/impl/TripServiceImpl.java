@@ -33,7 +33,7 @@ public class TripServiceImpl implements TripService {
         headers.add("Authorization", "Basic " + base64Credentials);
         HttpEntity<String> entity = new HttpEntity<>(headers);
 
-        return restTemplate.getForObject("http://localhost:8005/trip/all/" + tripId, HttpMethod.GET, entity,Trip.class).getBody();;
+        return restTemplate.exchange("http://localhost:8005/trip/all/" + tripId, HttpMethod.GET, entity,Trip.class).getBody();
     }
 
     public Trip getFallbackTicketsTrip(Long tripId){
