@@ -10,22 +10,22 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class SecurityConfig extends WebSecurityConfigurerAdapter
 {
     @Override
-    protected void configure(HttpSecurity http) throws Exception 
+    protected void configure(HttpSecurity http) throws Exception
     {
         http
          .csrf().disable()
-         .authorizeRequests().anyRequest().hasRole("REST_CLIENT")
+         .authorizeRequests().anyRequest().permitAll()
          .and()
          .httpBasic();
     }
-  
+
     @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) 
-            throws Exception 
+    public void configureGlobal(AuthenticationManagerBuilder auth)
+            throws Exception
     {
         auth.inMemoryAuthentication()
-            .withUser("rest-client")
-            .password("{noop}p@ssword")
+            .withUser("rest-location")
+            .password("{noop}12345")
             .roles("REST_CLIENT");
     }
 }

@@ -17,26 +17,28 @@ public class TripServiceImpl implements TripService {
     @Autowired
     private RestTemplate restTemplate;
 
-    @HystrixCommand(fallbackMethod = "getFallbackTicketsTrip",
-            threadPoolKey = "getTicketsTrip",
-            threadPoolProperties = {
-                    @HystrixProperty(name="coreSize", value="100"),
-                    @HystrixProperty(name="maximumSize", value="120"),
-                    @HystrixProperty(name="maxQueueSize", value="50"),
-                    @HystrixProperty(name="allowMaximumSizeToDivergeFromCoreSize", value="true"),
-            })
+    @HystrixCommand(fallbackMethod = "getFallbackTicketsTrip"
+//            threadPoolKey = "getTicketsTrip",
+//            threadPoolProperties = {
+//                    @HystrixProperty(name="coreSize", value="100"),
+//                    @HystrixProperty(name="maximumSize", value="120"),
+//                    @HystrixProperty(name="maxQueueSize", value="50"),
+//                    @HystrixProperty(name="allowMaximumSizeToDivergeFromCoreSize", value="true"),
+//            }
+            )
     public Trip getTicketsTrip(Long tripId) {
-        String apiCredentials = "rest-trip:p@ssword";
+        String apiCredentials = "rest-trip:12345";
         String base64Credentials = new String(Base64.encodeBase64(apiCredentials.getBytes()));
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Authorization", "Basic " + base64Credentials);
         HttpEntity<String> entity = new HttpEntity<>(headers);
 
-        return restTemplate.exchange("http://localhost:8005/trip/all/" + tripId, HttpMethod.GET, entity,Trip.class).getBody();
+        return restTemplate.exchange("http://trip-service/trip/all/" + tripId, HttpMethod.GET, entity,Trip.class).getBody();
     }
 
     public Trip getFallbackTicketsTrip(Long tripId){
+        System.out.println("Fallback of ticket");
         return new Trip();
     }
 

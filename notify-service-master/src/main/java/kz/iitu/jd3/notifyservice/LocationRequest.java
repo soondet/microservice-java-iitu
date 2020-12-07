@@ -11,11 +11,12 @@ import lombok.Setter;
 @AllArgsConstructor
 public class LocationRequest {
 
-    private String userId;
+    private Long tripId;
     private Trip trip;
 
-    public String getUserId() {
-        return userId;
+
+    public Long getTripId() {
+        return tripId;
     }
 
     public Trip getTrip() {

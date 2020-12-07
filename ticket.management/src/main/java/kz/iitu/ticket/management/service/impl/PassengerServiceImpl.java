@@ -17,16 +17,17 @@ public class PassengerServiceImpl implements PassengerService {
     @Autowired
     private RestTemplate restTemplate;
 
-    @HystrixCommand(fallbackMethod = "getFallbackPassengerIin",
-            threadPoolKey = "getPassengerIin",
-            threadPoolProperties = {
-                    @HystrixProperty(name="coreSize", value="100"),
-                    @HystrixProperty(name="maximumSize", value="120"),
-                    @HystrixProperty(name="maxQueueSize", value="50"),
-                    @HystrixProperty(name="allowMaximumSizeToDivergeFromCoreSize", value="true"),
-            })
+    @HystrixCommand(fallbackMethod = "getFallbackPassengerIin"
+//            threadPoolKey = "getPassengerIin",
+//            threadPoolProperties = {
+//                    @HystrixProperty(name="coreSize", value="100"),
+//                    @HystrixProperty(name="maximumSize", value="120"),
+//                    @HystrixProperty(name="maxQueueSize", value="50"),
+//                    @HystrixProperty(name="allowMaximumSizeToDivergeFromCoreSize", value="true"),
+//            }
+            )
     public Passenger getPassengerIin(int iin) {
-        String apiCredentials = "rest-passenger:p@ssword";
+        String apiCredentials = "rest-passenger:12345";
         String base64Credentials = new String(Base64.encodeBase64(apiCredentials.getBytes()));
 
         HttpHeaders headers = new HttpHeaders();
@@ -34,10 +35,11 @@ public class PassengerServiceImpl implements PassengerService {
         HttpEntity<String> entity = new HttpEntity<>(headers);
 
 
-        return restTemplate.exchange("http://localhost:8003/passenger/getByIin/" + iin, HttpMethod.GET, entity,Passenger.class).getBody();
+        return restTemplate.exchange("http://passenger-service/passenger/getByIin/" + iin, HttpMethod.GET, entity,Passenger.class).getBody();
     }
 
     public Passenger getFallbackPassengerIin(int iin){
+        System.out.println("Fallback of ticket working");
         return new Passenger();
     }
 }

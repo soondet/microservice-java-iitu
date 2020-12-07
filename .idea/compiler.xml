@@ -9,10 +9,11 @@
         <module name="trip.management" />
         <module name="notify-service" />
         <module name="driver.management" />
-        <module name="bus.management" />
         <module name="location.management" />
         <module name="discovery" />
         <module name="zuul-server" />
+        <module name="service-discovery" />
+        <module name="bus.management" />
         <module name="passenger.management" />
         <module name="auth-service" />
         <module name="ticket.management" />
@@ -21,15 +22,16 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="auth-service" target="1.8" />
-      <module name="bus.management" target="11" />
+      <module name="bus.management" target="1.8" />
       <module name="common-service" target="1.8" />
       <module name="discovery" target="11" />
-      <module name="driver.management" target="11" />
-      <module name="location.management" target="11" />
+      <module name="driver.management" target="1.8" />
+      <module name="location.management" target="1.8" />
       <module name="notify-service" target="1.8" />
-      <module name="passenger.management" target="11" />
-      <module name="ticket.management" target="11" />
-      <module name="trip.management" target="11" />
+      <module name="passenger.management" target="1.8" />
+      <module name="service-discovery" target="1.8" />
+      <module name="ticket.management" target="1.8" />
+      <module name="trip.management" target="1.8" />
       <module name="zuul-server" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -43,6 +45,7 @@
       <module name="location.management" options="-parameters" />
       <module name="notify-service" options="-parameters" />
       <module name="passenger.management" options="-parameters" />
+      <module name="service-discovery" options="-parameters" />
       <module name="ticket.management" options="-parameters" />
       <module name="trip.management" options="-parameters" />
       <module name="zuul-server" options="-parameters" />

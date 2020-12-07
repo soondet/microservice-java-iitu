@@ -14,18 +14,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
     {
         http
          .csrf().disable()
-         .authorizeRequests().anyRequest().hasRole("REST_CLIENT")
+         .authorizeRequests().anyRequest().permitAll()
          .and()
          .httpBasic();
     }
-  
+
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth)
-            throws Exception 
+            throws Exception
     {
         auth.inMemoryAuthentication()
-            .withUser("rest-client")
-            .password("{noop}p@ssword")
+            .withUser("rest-ticket")
+            .password("{noop}12345")
             .roles("REST_CLIENT");
     }
 }

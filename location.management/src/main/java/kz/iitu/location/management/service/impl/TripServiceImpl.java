@@ -23,29 +23,28 @@ public class TripServiceImpl implements TripService {
     private RestTemplate restTemplate;
 
     @HystrixCommand(
-            fallbackMethod = "getFallbackLocationsTrip",
-            threadPoolKey = "getLocationsTrip",
-            threadPoolProperties = {
-                    @HystrixProperty(name="coreSize", value="100"),
-                    @HystrixProperty(name="maximumSize", value="120"),
-                    @HystrixProperty(name="maxQueueSize", value="50"),
-                    @HystrixProperty(name="allowMaximumSizeToDivergeFromCoreSize", value="true"),
-            })
+            fallbackMethod = "getFallbackLocationsTrip"
+//            threadPoolKey = "getLocationsTrip",
+//            threadPoolProperties = {
+//                    @HystrixProperty(name="coreSize", value="100"),
+//                    @HystrixProperty(name="maximumSize", value="1000"),
+//                    @HystrixProperty(name="maxQueueSize", value="999"),
+//                    @HystrixProperty(name="allowMaximumSizeToDivergeFromCoreSize", value="true"),
+//            }
+            )
     public Trip getLocationsTrip( Long tripId) {
         RestTemplate restTemplate = new RestTemplate();
-        String apiCredentials = "rest-trip:p@ssword";
+        String apiCredentials = "rest-trip:12345";
         String base64Credentials = new String(Base64.encodeBase64(apiCredentials.getBytes()));
-
         HttpHeaders headers = new HttpHeaders();
         headers.add("Authorization", "Basic " + base64Credentials);
         HttpEntity<String> entity = new HttpEntity<>(headers);
-
-
+        System.out.println(entity.toString());
         return restTemplate.exchange("http://localhost:8005/trip/all/" + tripId, HttpMethod.GET,entity,Trip.class).getBody();
     }
 
     public Trip getFallbackLocationsTrip(Long tripId){
-        System.out.println("sdsds");
+        System.out.println("Fallback Method of Location Works");
         return new Trip((long) 1, "There isnt any trip");
     }
 }

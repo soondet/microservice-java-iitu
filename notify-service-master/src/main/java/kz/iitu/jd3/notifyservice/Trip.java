@@ -11,7 +11,12 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Trip {
 
+
     private Long id;
+
     private String loc;
+
+    private int numb;
+
 
 }

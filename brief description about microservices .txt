@@ -1,0 +1,12 @@
+The report with a brief description of all microservices,
+DISCOVERY-SERVICE - microservice using eureka to monitor,unite and etc. other microsrevices.
+COMMON-SERVICE - microservice that have roles and jwtconfig classes for token and roles of users that authorised
+ZUUL-SERVER-APPLICATION - microservice that unites all microservices and working as gateway by setting for all microservices one main port,and it has authentication using JWT token  
+AUTH-SERVICE - microservice that responsible for authentication,authorization and giving JWT token 
+BUS-SERVICE - microservice that responsible for adding, using and etc. buses, connected to driver-microservice 
+LOCATION-SERVICE - microservice that responsible for adding,using and etc. locations, connected to trip-microservice , and producer for locations while trip consumer 
+DRIVER-SERVICE - microservice that responsible for adding,using and etc. drivers,connected to bus-service 
+TRIP-SERVICE - microservice that responsible for adding,using and etc. trips, connected to location-service,passenger-service
+TICKET-SERVICE - microservice that responsible for adding,using and etc. tickets, connected to trip-service
+PASSENGER-SERVICE - microservice that responsible for adding,using and etc. passengers, connected to trip-service
+NOTIFY-SERVICE-MASTER - microservice consumer tripid where producer is location-service

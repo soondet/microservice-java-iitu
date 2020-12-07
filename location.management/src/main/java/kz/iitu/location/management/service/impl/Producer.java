@@ -14,6 +14,7 @@ public class Producer {
     private KafkaTemplate<String, LocationRequest> kafkaTemplate;
 
     public String locationRequestNotify(LocationRequest locationRequest) {
+        System.out.println(locationRequest.getTrip() + " " + locationRequest.getTripId());
         System.out.println(String.format("#### -> Producing location request to notification service -> %s", locationRequest));
         this.kafkaTemplate.send(TOPIC, locationRequest);
         return "Successfully";

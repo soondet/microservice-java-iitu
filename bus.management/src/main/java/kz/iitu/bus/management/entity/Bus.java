@@ -25,8 +25,9 @@ public class Bus {
     public Bus() {
     }
 
-    public Bus(int id, String state_number, String model, int year, double capacity) {
+    public Bus(int id, int tripId, String state_number, String model, int year, double capacity) {
         this.id = id;
+        this.tripId = tripId;
         this.state_number = state_number;
         this.model = model;
         this.year = year;
@@ -39,6 +40,14 @@ public class Bus {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getTripId() {
+        return tripId;
+    }
+
+    public void setTripId(int tripId) {
+        this.tripId = tripId;
     }
 
     public String getState_number() {

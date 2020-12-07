@@ -2,20 +2,24 @@ package kz.iitu.location.management.entity;
 
 public class LocationRequest {
 
-    private String userId;
+    private Long tripId;
     private Trip trip;
 
-    public LocationRequest(String userId, Trip trip) {
-        this.userId = userId;
+    public LocationRequest(Long tripId, Trip trip) {
+        this.tripId = tripId;
         this.trip = trip;
+
     }
 
-    public String getUserId() {
-        return userId;
+    public LocationRequest() {
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public Long getTripId() {
+        return tripId;
+    }
+
+    public void setTripId(Long tripId) {
+        this.tripId = tripId;
     }
 
     public Trip getTrip() {
@@ -24,13 +28,5 @@ public class LocationRequest {
 
     public void setTrip(Trip trip) {
         this.trip = trip;
-    }
-
-    @Override
-    public String toString() {
-        return "LocationRequest{" +
-                "userId='" + userId + '\'' +
-                ", trip=" + trip +
-                '}';
     }
 }

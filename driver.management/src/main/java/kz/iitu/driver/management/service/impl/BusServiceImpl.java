@@ -28,17 +28,18 @@ public class BusServiceImpl implements BusService {
             }
     )
     public Bus getDriversBus(Long busId) {
-        String apiCredentials = "rest-bus:p@ssword";
+        String apiCredentials = "rest-driver:12345";
         String base64Credentials = new String(Base64.encodeBase64(apiCredentials.getBytes()));
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Authorization", "Basic " + base64Credentials);
         HttpEntity<String> entity = new HttpEntity<>(headers);
 
-        return  restTemplate.getForObject("http://localhost:8001/bus/all/" + busId, HttpMethod.GET, entity,Bus.class).getBody();
+        return  restTemplate.exchange("http://driver-service/bus/all/" + busId, HttpMethod.GET, entity,Bus.class).getBody();
     }
 
     public Bus getFallbackDriversBus(Long busId){
+        System.out.println("Fallback of Driver Working");
         return new Bus();
     }
 }

@@ -5,13 +5,10 @@ import kz.iitu.location.management.entity.LocationRequest;
 import kz.iitu.location.management.service.impl.Producer;
 import kz.iitu.location.management.service.impl.TripServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "/location/request")
+@RequestMapping(value = "/locationRequest")
 public class LocationRequestController {
     private final Producer producer;
     private TripServiceImpl tripService;
@@ -23,11 +20,11 @@ public class LocationRequestController {
     }
 
     // TODO Ideally there should POST request
-    @GetMapping
-    public String sendMessageToKafkaTopic2(@RequestParam("userId") String userId,
-                                           @RequestParam("tripId") Long tripId) {
+    @GetMapping("/qq/{tripId}")
+    public String sendMessageToKafkaTopic2(@PathVariable("tripId") Long tripId) {
 
-        LocationRequest locationRequest = new LocationRequest(userId, tripService.getLocationsTrip(tripId));
+        LocationRequest locationRequest = new LocationRequest(tripId, tripService.getLocationsTrip(tripId));
+        System.out.println(locationRequest.getTrip() + " " + locationRequest.getTripId());
         this.producer.locationRequestNotify(locationRequest);
         return "Your request sent successful!";
     }
