@@ -22,7 +22,7 @@ public class LocationRequestController {
     // TODO Ideally there should POST request
     @GetMapping("/qq/{tripId}")
     public String sendMessageToKafkaTopic2(@PathVariable("tripId") Long tripId) {
-
+        System.out.println("asd");
         LocationRequest locationRequest = new LocationRequest(tripId, tripService.getLocationsTrip(tripId));
         System.out.println(locationRequest.getTrip() + " " + locationRequest.getTripId());
         this.producer.locationRequestNotify(locationRequest);

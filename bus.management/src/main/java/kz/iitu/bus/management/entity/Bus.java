@@ -13,7 +13,7 @@ public class Bus {
     private int id;
     @Column(name = "trip_id")
     private int tripId;
-    @Column(name = "stateNumber")
+    @Column(name = "stateNumber") 
     private String  state_number;
     @Column(name = "model")
     private String model;

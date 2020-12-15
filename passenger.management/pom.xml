@@ -13,6 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>passenger.management</name>
 	<description>Passenger Management</description>
+<!--	<packaging>jar</packaging>-->
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -105,6 +106,7 @@
 		</dependencies>
 	</dependencyManagement>
 	<build>
+		<finalName>passenger</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

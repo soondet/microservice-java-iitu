@@ -41,6 +41,9 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
 		   .antMatchers("/passenger/**").permitAll()
 		   .antMatchers("/ticket/**").permitAll()
 		   .antMatchers("/trip/**").permitAll()
+		   .antMatchers("/history/**").permitAll()
+		   .antMatchers("/schedule/**").permitAll()
+		   .antMatchers("/locationRequest/**").permitAll()
 
 			   // Any other request must be authenticated
 		   .anyRequest().authenticated();

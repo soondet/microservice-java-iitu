@@ -7,10 +7,12 @@
       <module fileurl="file://$PROJECT_DIR$/common-service/common-service.iml" filepath="$PROJECT_DIR$/common-service/common-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/discovery/discovery.iml" filepath="$PROJECT_DIR$/discovery/discovery.iml" />
       <module fileurl="file://$PROJECT_DIR$/driver.management/driver.management.iml" filepath="$PROJECT_DIR$/driver.management/driver.management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/history.management/history.management.iml" filepath="$PROJECT_DIR$/history.management/history.management.iml" />
       <module fileurl="file://$PROJECT_DIR$/location.management/location.management.iml" filepath="$PROJECT_DIR$/location.management/location.management.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/microservice-java-iitu.iml" filepath="$PROJECT_DIR$/.idea/microservice-java-iitu.iml" />
       <module fileurl="file://$PROJECT_DIR$/notify-service-master/notify-service.iml" filepath="$PROJECT_DIR$/notify-service-master/notify-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/passenger.management/passenger.management.iml" filepath="$PROJECT_DIR$/passenger.management/passenger.management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schedule.management/schedule.management.iml" filepath="$PROJECT_DIR$/schedule.management/schedule.management.iml" />
       <module fileurl="file://$PROJECT_DIR$/service-discovery/service-discovery.iml" filepath="$PROJECT_DIR$/service-discovery/service-discovery.iml" />
       <module fileurl="file://$PROJECT_DIR$/ticket.management/ticket.management.iml" filepath="$PROJECT_DIR$/ticket.management/ticket.management.iml" />
       <module fileurl="file://$PROJECT_DIR$/trip.management/trip.management.iml" filepath="$PROJECT_DIR$/trip.management/trip.management.iml" />

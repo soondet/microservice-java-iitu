@@ -121,6 +121,7 @@
 	</dependencyManagement>
 
 	<build>
+		<finalName>location</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

@@ -1,0 +1,119 @@
+version: '2.2'
+services:
+#  driver.management:
+#    container_name: driver.management
+#    build:
+#      context: ./driver.management
+#    image: driver.management:latest
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/busService
+#    ports:
+#      - 8002:8002
+#    depends_on:
+#      - db
+#  db:
+#    image: postgres
+#    container_name: db
+#    environment:
+#      - POSTGRES_USER=postgres
+#      - POSTGRES_PASSWORD=asdasd123
+#      - POSTGRES_DB=busService
+#      - PGDATA=/var/lib/postgresql/data/pgdata
+#    ports:
+#      - 5432:5432
+#    volumes:
+#      - pgdata:/var/lib/postgresql/data
+#    restart: always
+  # postgre
+#  web:
+#    build: ./web
+#    ports:
+#      - "8080:8080"
+#    links:
+#      - app-db
+#    environment:
+#      - MYAPP_JDBC_URL=jdbc:postgresql://app-db:5432/somedb
+#      - MYAPP_JDBC_USER=someuser
+#      - MYAPP_JDBC_PASS=pass
+#
+#  app-db:
+#    image: postgres:9.6
+#    environment:
+#      - POSTGRES_USER=someuser
+#      - POSTGRES_PASSWORD=pass
+#      - POSTGRES_DB=somedb
+#    expose:
+#      - 5432
+#    volumes_from:
+#      - app-db-data
+#
+#  app-db-data:
+#    image: cogniteev/echo
+#    command: echo 'Data Container for PostgreSQL'
+#    volumes:
+#      - /opt/postgresdata/:/var/lib/postgresql/data
+#  service-discovery:
+#    container_name: service-discovery
+#    build:
+#      context: ./service-discovery
+#    image: service-discovery:latest
+#    ports:
+#      - 8761:8761
+#  bus.management:
+#    container_name: bus.management
+#    build:
+#      context: ./bus.management
+#    image: bus.management:latest
+#    ports:
+#      - 8001:8001
+
+
+#  location.management:
+#    container_name: location.management
+#    build:
+#      context: ./location.management
+#    image: location.management:latest
+#    ports:
+#      - 8006:8006
+#  trip.management:
+#    container_name: trip.management
+#    build:
+#      context: ./trip.management
+#    image: trip.management:latest
+#    ports:
+#      - 8005:8005
+#  ticket.management:
+#    container_name: ticket.management
+#    build:
+#      context: ./ticket.management
+#    image: ticket.management:latest
+#    ports:
+#      - 8004:8004
+#  passenger.management:
+#    container_name: passenger.management
+#    build:
+#      context: ./passenger.management
+#    image: passenger.management:latest
+#    ports:
+#       - 8003:8003
+
+  schedule.management:
+    container_name: schedule.management
+    build:
+      context: ./schedule.management
+    image: schedule.management:latest
+    ports:
+       - 8008:8008
+
+  history.management:
+    container_name: history.management
+    build:
+      context: ./history.management
+    image: history.management:latest
+    ports:
+       - 8007:8007
+
+
+#
+#volumes:
+#  pgdata:

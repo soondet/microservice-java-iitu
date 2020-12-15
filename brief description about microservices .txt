@@ -10,3 +10,5 @@ TRIP-SERVICE - microservice that responsible for adding,using and etc. trips, co
 TICKET-SERVICE - microservice that responsible for adding,using and etc. tickets, connected to trip-service
 PASSENGER-SERVICE - microservice that responsible for adding,using and etc. passengers, connected to trip-service
 NOTIFY-SERVICE-MASTER - microservice consumer tripid where producer is location-service
+HISTORY-SERVICE - microservice that responsible for adding,using and etc. history of passengers, connected to passenger-service,ticket-service
+SCHEDULE-SERVICE - microservice that responsible for adding,using and etc. schedule of buses, connected to bus-service

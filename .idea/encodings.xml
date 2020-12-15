@@ -7,10 +7,12 @@
     <file url="file://$PROJECT_DIR$/common-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/driver.management/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/history.management/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/location.management/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/notify-service-master/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/notify-service-master/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/passenger.management/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/schedule.management/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service-discovery/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service-discovery/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ticket.management/src/main/java" charset="UTF-8" />

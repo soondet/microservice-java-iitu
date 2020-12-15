@@ -6,18 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="trip.management" />
-        <module name="notify-service" />
-        <module name="driver.management" />
-        <module name="location.management" />
-        <module name="discovery" />
-        <module name="zuul-server" />
-        <module name="service-discovery" />
-        <module name="bus.management" />
-        <module name="passenger.management" />
         <module name="auth-service" />
+        <module name="notify-service" />
+        <module name="service-discovery" />
+        <module name="driver.management" />
+        <module name="zuul-server" />
+        <module name="discovery" />
+        <module name="passenger.management" />
         <module name="ticket.management" />
         <module name="common-service" />
+        <module name="bus.management" />
+        <module name="trip.management" />
+        <module name="history.management" />
+        <module name="schedule.management" />
+        <module name="location.management" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -26,9 +28,11 @@
       <module name="common-service" target="1.8" />
       <module name="discovery" target="11" />
       <module name="driver.management" target="1.8" />
+      <module name="history.management" target="1.8" />
       <module name="location.management" target="1.8" />
       <module name="notify-service" target="1.8" />
       <module name="passenger.management" target="1.8" />
+      <module name="schedule.management" target="1.8" />
       <module name="service-discovery" target="1.8" />
       <module name="ticket.management" target="1.8" />
       <module name="trip.management" target="1.8" />
@@ -42,9 +46,11 @@
       <module name="common-service" options="-parameters" />
       <module name="discovery" options="-parameters" />
       <module name="driver.management" options="-parameters" />
+      <module name="history.management" options="-parameters" />
       <module name="location.management" options="-parameters" />
       <module name="notify-service" options="-parameters" />
       <module name="passenger.management" options="-parameters" />
+      <module name="schedule.management" options="-parameters" />
       <module name="service-discovery" options="-parameters" />
       <module name="ticket.management" options="-parameters" />
       <module name="trip.management" options="-parameters" />
